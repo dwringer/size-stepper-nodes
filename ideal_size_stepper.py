@@ -8,7 +8,9 @@ from invokeai.app.invocations.baseinvocation import (
     InputField,
     OutputField,
     invocation,
-    invocation_output
+    invocation_output,
+    WithMetadata,
+    WithWorkflow,
 )
 
 @invocation_output("ideal_size_stepper_output")
