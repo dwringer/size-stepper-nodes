@@ -1,7 +1,7 @@
 import math
 from typing import Literal
 
-from invokeai.app.invocations.baseinvocation import (
+from invokeai.invocation_api import (
     BaseInvocation,
     BaseInvocationOutput,
     InvocationContext,
