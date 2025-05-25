@@ -45,10 +45,10 @@ TAPER_FIELDNAMES: list = [
 )
 class IdealSizeStepperInvocation(BaseInvocation):
     """Calculates the ideal size for intermediate generations given full size and minimum size dimensions"""
-    full_width:  int = InputField(default=None,  description="Full size width")
-    full_height: int = InputField(default=None,  description="Full size height")
-    ideal_width:   int = InputField(default=None,  description="Optimized size width")
-    ideal_height:  int = InputField(default=None,  description="Optimized size height")
+    full_width:  int = InputField(description="Full size width")
+    full_height: int = InputField(description="Full size height")
+    ideal_width:   int = InputField(description="Optimized size width")
+    ideal_height:  int = InputField(description="Optimized size height")
     taper_a: Literal[tuple(TAPERS_IMPLEMENTED)] = InputField(
         default="Proportional (log area)", description="Taper used for scaling the intermediate dimensions"
     )

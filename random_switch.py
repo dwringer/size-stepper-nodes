@@ -36,8 +36,8 @@ class FinalSizeOutput(BaseInvocationOutput):
 )
 class RandomSwitchInvocation(BaseInvocation):
     """Randomly switches its two outputs between the two inputs (integers)"""
-    integer_a: int = InputField(default=None, description="The first input")
-    integer_b: int = InputField(default=None, description="The second input")
+    integer_a: int = InputField(description="The first input")
+    integer_b: int = InputField(description="The second input")
 
     def invoke(self, context:InvocationContext) -> RandomSwitchOutput:
         rand = random.random()
@@ -57,8 +57,8 @@ class RandomSwitchInvocation(BaseInvocation):
 class FinalSizeAndOrientationInvocation(BaseInvocation):
     """Input a pair of dimensions and choose portrait, landscape, or random orientation"""
     # Inputs
-    dimension_a: int = InputField(default=None, description="Size of the desired image resolution's first dimension")
-    dimension_b: int = InputField(default=None, description="Size of the desired image resolution's second dimension")
+    dimension_a: int = InputField(description="Size of the desired image resolution's first dimension")
+    dimension_b: int = InputField(description="Size of the desired image resolution's second dimension")
     orientation: Literal["random", "landscape", "portrait"] = InputField(default="landscape", description="Desired orientation for the final image")
 
     def invoke(self, context:InvocationContext) -> FinalSizeOutput:
